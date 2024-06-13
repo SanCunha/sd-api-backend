@@ -3,7 +3,6 @@ import jwt from 'jsonwebtoken';
 
 const secretKey = '29619b621392f4aae0e7eb8dc83ae746';
 
-// Sample user data
 const users: { [key: string]: string } = {
     'kaka': '152computacao',
     'frodo': '121civil'
@@ -19,7 +18,6 @@ export async function loginHandler(request: HttpRequest, context: InvocationCont
 
     const body: LoginRequestBody = await request.json() as LoginRequestBody;
     const { username, password } = body;
-
 
     if (users[username] && users[username] === password) {
 
